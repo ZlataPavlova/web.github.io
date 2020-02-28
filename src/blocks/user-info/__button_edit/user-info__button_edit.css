@@ -1,0 +1,25 @@
+
+.user-info__button_edit {
+  
+    position: relative;
+    max-width: 38px;
+    max-height: 18px;
+    /* font-size: 30px; */
+    font-size: 12px;
+    line-height: 15px;
+    align-items: center;
+    text-align: center;
+    display: block;
+    margin-top: 24px;
+    background-color: black;
+    color: white;
+  }
+  .user-info__button_edit:hover {
+    background-color: white;
+    color: black;
+  }
+  
+        
+      
+          
+    

@@ -1,0 +1,25 @@
+.popup__error{
+position: absolute;
+
+font-size: 12px;
+line-height: 15px;
+
+color: #FF0000;
+
+}
+
+.popup__error_userName {
+left: 36px;
+top: 175px;
+}
+
+.popup__error_userInfo {
+    left: 36px;
+    top: 245px;
+    }
+
+.popup__error_name {
+    left: 36px;
+    top: 172px;
+    }
+    
