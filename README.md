@@ -1,5 +1,5 @@
 # Сборка сайта
-## https://zlatapavlova.github.io/web.github.io/ v0.0.13
+## https://zlatapavlova.github.io/web.github.io/ v0.0.14
 ### Учебный проект сборки сайта с помощью webpack
 ## Разворачиваем проект из шаблона
 ### Шаг 1 
