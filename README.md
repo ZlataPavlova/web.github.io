@@ -1,4 +1,3 @@
-# web.github.io
 # Сборка сайта
 ## https://zlatapavlova.github.io/web.github.io/ v0.0.13
 ### Учебный проект сборки сайта с помощью webpack
