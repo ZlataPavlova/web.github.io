@@ -57,9 +57,12 @@ const link = formCard.elements.link;
 const popupErrorName = document.querySelector('.popup__error_name');
 const popupErrorLink = document.querySelector('.popup__error_link');
 const popupButton = document.querySelector('.popup__button');
+const isDev = process.env.NODE_ENV === 'development';
+
+
 
 const api = new Api({
-  baseUrl: 'http://95.216.175.5/cohort7',
+  baseUrl: NODE_ENV==='development' ? 'http://praktikum.tk/cohort7':'https://praktikum.tk/cohort7',
   headers: {
     authorization: '902aa8bb-c488-4b00-a56a-c00ae30113ec',
     'Content-Type': 'application/json'
