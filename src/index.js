@@ -1,3 +1,21 @@
+
+
+import './style.css';
+import  './images/avatar.jpg';
+import  './images/close.svg';
+import  './images/logo.svg';
+import  './images/like-active.svg';
+import  './images/like-inactive.svg';
+import {CardList} from './CardList';
+import {Api} from './Api';
+import {Popup} from './Popup';
+import {PopupCard} from './PopupCard';
+import {PopupUserProfile} from './PopupUserProfile';
+import {Card} from './Card';
+import {FormValidatorCard} from './FormValidatorCard';
+import {FormValidatorUserInfo} from './FormValidatorUserInfo';
+
+
 //переменные
 const newProfile = document.forms.newProfile;
 const userName = newProfile.elements.userName;
@@ -39,23 +57,12 @@ const link = formCard.elements.link;
 const popupErrorName = document.querySelector('.popup__error_name');
 const popupErrorLink = document.querySelector('.popup__error_link');
 const popupButton = document.querySelector('.popup__button');
+const isDev = process.env.NODE_ENV === 'development';
 
 
-//вызовы классов
-/*  Можно лучше: В качестве параметров передавайте не переменные, а объект
-*  если вы в ходе развития проекта захотите добавить переменных, то вам придётся менять код во многих местах 
-*  https: //refactoring.guru/ru/smells/long-parameter-list 
-* Как пример:  
- const myObject = {name:"test", url : "http//:ya.ru"}
- function myFunction(param)
- {
-     param.name;
-     param.url;
- }
- myFunction(myObject)
-*/
+
 const api = new Api({
-  baseUrl: 'http://95.216.175.5/cohort7',
+  baseUrl: NODE_ENV==='development' ? 'http://praktikum.tk/cohort7':'https://praktikum.tk/cohort7',
   headers: {
     authorization: '902aa8bb-c488-4b00-a56a-c00ae30113ec',
     'Content-Type': 'application/json'
@@ -73,7 +80,7 @@ api.getInitialUserInfo().then((result) => {
 
 const card = new Card();
 const cardList = new CardList(card, container);
-// какой смысл вызывать здесь render
+
 
 const validationUserInfo = new FormValidatorUserInfo(words, popupErrorUserName, popupErrorUserInfo);
 const validationCard = new FormValidatorCard(words, popupErrorName, popupErrorLink);

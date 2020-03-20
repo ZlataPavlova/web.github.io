@@ -1,4 +1,7 @@
-class PopupUserProfile extends Popup {
+import {Popup} from './Popup';
+import {validationUserInfo} from './FormValidatorUserInfo';
+
+ export class PopupUserProfile extends Popup {
   constructor(popup, popupButtonOpen, popupButtonClose, userName, userInfo, button,  UserInfoName, UserInfoJob, validationUserInfo, api) {
     super(popup, popupButtonOpen, popupButtonClose);
     this.userName = userName;
@@ -23,16 +26,12 @@ class PopupUserProfile extends Popup {
   };
 
   editProfile() {
-    // Правильно что используете  event.preventDefault();
     event.preventDefault();
-    
-    this.api.editUserInfo(userName.value, userInfo.value)
-    
-    
+    this.api.editUserInfo(this.userName.value, this.userInfo.value)  
   }
   
   createProfile() {
-    api.editUserInfo(userName, userInfo).then((result) =>{
+    this.api.editUserInfo(this.userName, this.userInfo).then((result) =>{
      
       this.UserInfoName.textContent = result.name;
       this.UserInfoJob.textContent = result.about;
@@ -41,13 +40,7 @@ class PopupUserProfile extends Popup {
     super.closeFormCard();
   }
   //метод для проверки данных введеных в форму редактирования профиля
-  validation() {
-    /** Надо исправить: вы обращаетесь в классе к переменной alidationUserInfo объявленной глобально,
-    так делать нельзя. Вы можете передать эту переменную в качестве параметров, а потом уже обращаться к ней 
-    Стремитесь к тому чтобы класс у вас был самодостаточным, и не зависел от глобальных переменных или классов 
-    объявленных глобально, а только от тех данных которые были переданны через параметры 
-    */
-   
+  validation() { 
     this.popup.addEventListener('input', this.validationUserInfo.setEventListeners(this.userName, this.userInfo));
     this.popup.addEventListener('input', this.validationUserInfo.setSubmitButtonState(this.button));
 

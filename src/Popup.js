@@ -1,6 +1,6 @@
 //класс для открытия и закрытия форм
 
-class Popup {
+ export class Popup {
     constructor(popup, popupButtonOpen, popupButtonClose) {
         this.popup = popup;
         this.popupButtonOpen = popupButtonOpen;
